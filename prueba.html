@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Mi página de prueba</title>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX'); 
+  </script>
+</head>
+<body>
+  <h1>Hola, estoy probando Google Analytics 🚀</h1>
+  <button onclick="gtag('event', 'clic_boton', {'event_category': 'interacción'});">
+    Haz clic aquí
+  </button>
+</body>
+</html>
