@@ -1,18 +1,37 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
   <title>Mi página de prueba</title>
+
+  <!-- Usa tu ID real en AMBAS líneas -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C4NDLDD212"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
+
     gtag('js', new Date());
-    gtag('config', 'G-XXXXXXXXXX'); 
+
+    // Activa modo debug para que aparezca en DebugView
+    gtag('set', 'debug_mode', true);
+
+    // Configura GA4 (desactivo el page_view auto para hacerlo explícito)
+    gtag('config', 'G-C4NDLDD212', { send_page_view: false });
+
+    // Disparo page_view manual (útil en SPAs y para verificar más claro)
+    gtag('event', 'page_view', {
+      page_location: location.href,
+      page_title: document.title
+    });
   </script>
 </head>
 <body>
   <h1>Hola, estoy probando Google Analytics 🚀</h1>
-  <button onclick="gtag('event', 'clic_boton', {'event_category': 'interacción'});">
+
+  <button onclick="gtag('event', 'clic_boton', {
+    event_category: 'interaccion',
+    event_label: 'Boton principal'
+  });">
     Haz clic aquí
   </button>
 </body>
